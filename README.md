@@ -4,7 +4,7 @@
 
 **An in-game overlay mod for Dragon Nest: quality of life, graphics, a damage meter and more.**
 
-[![Latest release](https://img.shields.io/github/v/release/Nutrient/DNX-Public?label=release&color=1e90ff)](../../releases/latest) [![Downloads](https://img.shields.io/github/downloads/Nutrient/DNX-Public/total?color=1e90ff)](../../releases) [![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/jEcFtkX5N6) [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/nutrient)
+[![Latest release](https://img.shields.io/github/v/release/Nutrient/DNX-Public?label=release&color=1e90ff)](../../releases/latest) [![Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FNutrient%2FDNX-Public%2Fbadges%2Fdownloads.json)](../../releases) [![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/jEcFtkX5N6) [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/nutrient)
 
 [Download](../../releases/latest) · [Install](#install) · [Features](#features) · [Troubleshooting](#troubleshooting) · [Discord](https://discord.gg/jEcFtkX5N6)
 

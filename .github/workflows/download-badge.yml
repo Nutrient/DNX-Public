@@ -1,0 +1,35 @@
+# Counts manual downloads (the DNXv*.zip asset of every release) and publishes them as a
+# shields.io endpoint JSON on the `badges` branch. Launcher auto-update traffic
+# (manifest.json, dnx_launcher.exe, dnx_mod.dll, dnx_bundle.pak) is not counted.
+name: Download badge
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Count zip downloads and publish badge JSON
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          n=$(gh api "repos/$REPO/releases" --paginate \
+                --jq '[.[].assets[] | select(.name | endswith(".zip")) | .download_count] | add // 0' \
+              | awk '{s += $1} END {print s + 0}')
+          echo "Manual downloads: $n"
+          mkdir out && cd out
+          printf '{"schemaVersion":1,"label":"downloads","message":"%s","color":"1e90ff"}\n' "$n" > downloads.json
+          git init -q -b badges
+          git add downloads.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -qm "Update download badge: $n"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" badges
